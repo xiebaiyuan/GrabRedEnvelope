@@ -11,7 +11,6 @@ plugins {
 }
 
 
-
 def defaultPropertiesFile = rootProject.file("buildsystem/default.properties")
 def defaultProperties = new Properties()
 defaultProperties.load(new FileInputStream(defaultPropertiesFile))
@@ -56,7 +55,7 @@ android {
 //                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
 //        ]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        resConfigs 'zh'
+        resourceConfigurations += ['zh']
         multiDexEnabled true
     }
     buildTypes {
@@ -92,11 +91,11 @@ android {
         }
     }
     namespace 'com.carlos.grabredenvelope'
-
-    lintOptions {
-        checkReleaseBuilds false
+    lint {
         abortOnError false
+        checkReleaseBuilds false
     }
+
 
 }
 

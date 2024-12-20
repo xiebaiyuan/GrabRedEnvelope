@@ -4,7 +4,7 @@
     android:description="@string/wechat_description"
     android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged|typeViewClicked|typeNotificationStateChanged"
     android:accessibilityFeedbackType="feedbackAllMask"
-    android:notificationTimeout="100"
+    android:notificationTimeout="80"
     android:settingsActivity="com.carlos.grabredenvelope.activity.MainActivity"
     android:canRequestEnhancedWebAccessibility = "true"
     android:accessibilityFlags="flagDefault"

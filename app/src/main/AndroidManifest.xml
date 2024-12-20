@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!-- Umeng -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyApplication"
@@ -15,70 +15,81 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.carlos.grabredenvelope.activity.MainActivity"
+        <activity
+            android:name="com.carlos.grabredenvelope.activity.MainActivity"
+            android:exported="true"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"
-            android:exported="true">
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <service
             android:name=".services.WechatService"
+            android:exported="true"
             android:label="@string/grab_wechat_envelope"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:exported="true">
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter android:priority="1000">
-                <action android:name="android.accessibilityservice.AccessibilityService"/>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
             <meta-data
                 android:name="android.accessibilityservice"
-                android:resource="@xml/wechat_service"/>
+                android:resource="@xml/wechat_service" />
         </service>
 
         <service
             android:name=".services.EmojiService"
-            android:label="@string/auto_send_emoji"
+            android:exported="true"
             android:icon="@mipmap/ic_launcher"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:exported="true">
+            android:label="@string/auto_send_emoji"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService"/>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
             <meta-data
                 android:name="android.accessibilityservice"
-                android:resource="@xml/emoji_service"/>
+                android:resource="@xml/emoji_service" />
         </service>
 
-        <activity android:name="com.carlos.grabredenvelope.receiver.MessageActivity"/>
+        <activity android:name="com.carlos.grabredenvelope.receiver.MessageActivity" />
 
-        <service android:name=".services.JpushService"
-                 android:enabled="true"
-                 android:exported="false"
-                 android:process=":pushcore">
-            <intent-filter>
-                <action android:name="cn.jiguang.user.service.action" />
-            </intent-filter>
-        </service>
-
-<!--        <receiver-->
-<!--            android:name=".receiver.JpushReceiver"-->
-<!--            android:enabled="true"-->
-<!--            android:exported="false"-->
-<!--            android:process=":pushcore">-->
+        <!--        <service android:name=".services.JpushService"-->
+        <!--                 android:enabled="true"-->
+        <!--                 android:exported="false"-->
+        <!--                 android:process=":pushcore">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="cn.jiguang.user.service.action" />-->
+        <!--            </intent-filter>-->
+        <!--        </service>-->
+<!--        <service-->
+<!--            android:name=".services.BaseAccessibilityService"-->
+<!--            android:exported="true"-->
+<!--            android:foregroundServiceType="dataSync"-->
+<!--            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">-->
 <!--            <intent-filter>-->
-<!--                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />-->
-<!--                <category android:name="${applicationId}" />-->
+<!--                <action android:name="android.accessibilityservice.AccessibilityService" />-->
 <!--            </intent-filter>-->
-<!--        </receiver>-->
+<!--        </service>-->
+
+<!--        <service-->
+<!--            android:name=".services.EmojiService"-->
+<!--            android:exported="true"-->
+<!--            android:foregroundServiceType="dataSync"-->
+<!--            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.accessibilityservice.AccessibilityService" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
 
 
-        <meta-data
-            android:name="io.sentry.auto-init"
-            android:value="false" />
+
+
+<!--        <meta-data-->
+<!--            android:name="io.sentry.auto-init"-->
+<!--            android:value="false" />-->
     </application>
 
 </manifest>
