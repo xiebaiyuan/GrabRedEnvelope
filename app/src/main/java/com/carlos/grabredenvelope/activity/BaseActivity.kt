@@ -53,7 +53,7 @@ open class BaseActivity : CBaseAccessibilityActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        controlUse()
+//        controlUse()
     }
 
     override fun onResume() {

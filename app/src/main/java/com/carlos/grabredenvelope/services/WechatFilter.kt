@@ -44,20 +44,20 @@ import com.carlos.grabredenvelope.data.RedEnvelopePreferences
 object WechatFilter {
 
     fun isNotifacationFilter(text: String?) : Boolean{
-        val grabNots = RedEnvelopePreferences.grabFilter.split("@")
-        for (grabNot in grabNots) {
-//            LogUtils.d("grabNot:$grabNot-text:$text")
-            if (grabNot.contains(text?:"")) return true
-        }
+//        val grabNots = RedEnvelopePreferences.grabFilter.split("@")
+//        for (grabNot in grabNots) {
+////            LogUtils.d("grabNot:$grabNot-text:$text")
+//            if (grabNot.contains(text?:"")) return true
+//        }
         return false
     }
 
     fun isRemarkFilter(accessibilityNodeInfo: AccessibilityNodeInfo?) : Boolean{
-        val grabNots = RedEnvelopePreferences.grabFilter.split("@")
-        for (grabNot in grabNots) {
-            if(AccessibilityServiceUtils.isExistNodeInfosByText(grabNot, accessibilityNodeInfo))
-                return true
-        }
+//        val grabNots = RedEnvelopePreferences.grabFilter.split("@")
+//        for (grabNot in grabNots) {
+//            if(AccessibilityServiceUtils.isExistNodeInfosByText(grabNot, accessibilityNodeInfo))
+//                return true
+//        }
         return false
     }
 }
