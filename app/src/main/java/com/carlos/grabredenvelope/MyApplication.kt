@@ -52,7 +52,7 @@ class MyApplication : MultiDexApplication() {
 
         CUtils.init(this)
 
-        AppInit()
+//        AppInit()
 
     }
 

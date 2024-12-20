@@ -37,7 +37,8 @@ android {
         flavorDimensions "360" //和versionCode相同
         ndk {
             //选择要添加的对应 cpu 类型的 .so 库。
-            abiFilters 'armeabi-v7a', 'x86'
+//            abiFilters 'armeabi-v7a', 'x86'
+            abiFilters 'arm64-v8a'
             // 还可以添加 'armeabi', 'arm64-v8a', 'x86_64', 'mips', 'mips64'
         }
 
@@ -128,11 +129,11 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1"
 
-    testImplementation 'junit:junit:4.13.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
-    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+//    testImplementation 'junit:junit:4.13.1'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+//
+//    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
 
 //    implementation 'com.carlos.cutils:cutils:0.0.28'
     implementation 'com.github.xbdcc:cutils:0.0.30-SNAPSHOT'
@@ -142,9 +143,9 @@ dependencies {
     implementation 'cn.jiguang.sdk:jpush:4.8.5'
 
     //umeng
-    implementation 'com.umeng.umsdk:common:9.5.0'// 必选
-    implementation 'com.umeng.umsdk:asms:1.4.1'// 必选
-    implementation 'com.umeng.umsdk:apm:1.7.0' // 错误分析模块改为独立库，看crash和性能数据请一定集成
+//    implementation 'com.umeng.umsdk:common:9.5.0'// 必选
+//    implementation 'com.umeng.umsdk:asms:1.4.1'// 必选
+//    implementation 'com.umeng.umsdk:apm:1.7.0' // 错误分析模块改为独立库，看crash和性能数据请一定集成
 
     implementation 'io.sentry:sentry-android:6.10.0'
     implementation 'com.google.android.material:material:1.5.0'

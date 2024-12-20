@@ -8,7 +8,7 @@ import cn.jpush.android.api.JPushInterface
 import com.carlos.cutils.base.activity.CBaseAccessibilityActivity
 import com.carlos.grabredenvelope.R
 import com.carlos.grabredenvelope.util.ControlUse
-import com.umeng.analytics.MobclickAgent
+//import com.umeng.analytics.MobclickAgent
 
 /**
  *                             _ooOoo_
@@ -59,13 +59,13 @@ open class BaseActivity : CBaseAccessibilityActivity() {
     override fun onResume() {
         super.onResume()
         JPushInterface.onResume(this)
-        MobclickAgent.onResume(this)
+//        MobclickAgent.onResume(this)
     }
 
     override fun onPause() {
         super.onPause()
         JPushInterface.onPause(this)
-        MobclickAgent.onPause(this)
+//        MobclickAgent.onPause(this)
     }
 
     fun back() {
