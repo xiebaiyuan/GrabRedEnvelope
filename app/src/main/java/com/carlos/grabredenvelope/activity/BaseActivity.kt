@@ -4,7 +4,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
-import cn.jpush.android.api.JPushInterface
+//import cn.jpush.android.api.JPushInterface
 import com.carlos.cutils.base.activity.CBaseAccessibilityActivity
 import com.carlos.grabredenvelope.R
 import com.carlos.grabredenvelope.util.ControlUse
@@ -58,13 +58,13 @@ open class BaseActivity : CBaseAccessibilityActivity() {
 
     override fun onResume() {
         super.onResume()
-        JPushInterface.onResume(this)
+//        JPushInterface.onResume(this)
 //        MobclickAgent.onResume(this)
     }
 
     override fun onPause() {
         super.onPause()
-        JPushInterface.onPause(this)
+//        JPushInterface.onPause(this)
 //        MobclickAgent.onPause(this)
     }
 

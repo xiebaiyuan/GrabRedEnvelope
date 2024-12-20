@@ -8,11 +8,12 @@ import android.graphics.BitmapFactory
 import android.view.accessibility.AccessibilityEvent
 import com.carlos.cutils.base.CBaseAccessibilityService
 import com.carlos.cutils.util.LogUtils
+import com.carlos.grabredenvelope.CBaseAccessibilityService2
 import com.carlos.grabredenvelope.MyApplication
 import com.carlos.grabredenvelope.R
 import com.carlos.grabredenvelope.activity.MainActivity
 import com.carlos.grabredenvelope.util.ControlUse
-import io.sentry.Sentry
+//import io.sentry.Sentry
 
 /**
  *                             _ooOoo_
@@ -49,7 +50,7 @@ import io.sentry.Sentry
 /**
  * Created by Carlos on 2020/3/4.
  */
-abstract class BaseAccessibilityService : CBaseAccessibilityService() {
+abstract class BaseAccessibilityService : CBaseAccessibilityService2() {
 
     private lateinit var controlUse: ControlUse
     open var notificationTitle: String = ""
@@ -77,7 +78,7 @@ abstract class BaseAccessibilityService : CBaseAccessibilityService() {
 
     override fun onInterrupt() {
         LogUtils.e("Service onInterrupt.")
-        Sentry.captureMessage("${this.javaClass.name} onInterrupt")
+//        Sentry.captureMessage("${this.javaClass.name} onInterrupt")
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {

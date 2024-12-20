@@ -1,7 +1,6 @@
 package com.carlos.grabredenvelope.execption
 
 import com.carlos.cutils.execption.CUncaughtExceptionHandler
-import io.sentry.Sentry
 
 /**
  *                             _ooOoo_
@@ -43,7 +42,7 @@ class MyUncaughtExceptionHandler : CUncaughtExceptionHandler() {
 
     override fun uncaughtException(t: Thread?, e: Throwable?) {
         if (t == null || e == null) return
-        Sentry.captureException(e)
+//        Sentry.captureException(e)
     }
 
 }

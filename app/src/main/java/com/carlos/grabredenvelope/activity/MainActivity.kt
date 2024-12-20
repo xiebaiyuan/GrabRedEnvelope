@@ -9,7 +9,7 @@ import com.carlos.cutils.util.LogUtils
 import com.carlos.grabredenvelope.databinding.ActivityMainBinding
 import com.carlos.grabredenvelope.fragment.*
 import com.carlos.grabredenvelope.util.Update
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.viewPager
 
 /**
  *                             _ooOoo_
@@ -67,7 +67,7 @@ open class MainActivity : BaseActivity() {
         initView()
 
         getPermissions()
-        checkVersion()
+//        checkVersion()
         addListener()
     }
 
