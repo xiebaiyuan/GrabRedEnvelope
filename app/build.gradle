@@ -34,12 +34,12 @@ android {
     buildFeatures {
         viewBinding true
     }
-    compileSdkVersion 33 // Specify the appropriate SDK version
+    compileSdkVersion 35 // Specify the appropriate SDK version
 
     defaultConfig {
         applicationId "com.carlos.grabredenvelope"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 35
         versionCode 360
         versionName "3.6.0"
         flavorDimensions "360" //和versionCode相同
@@ -156,7 +156,7 @@ dependencies {
 //    implementation 'com.umeng.umsdk:apm:1.7.0' // 错误分析模块改为独立库，看crash和性能数据请一定集成
 
 //    implementation 'io.sentry:sentry-android:6.10.0'
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
 
 //    implementation 'org.greenrobot:greendao:3.2.2' // add library
 
