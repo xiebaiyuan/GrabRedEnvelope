@@ -1,13 +1,22 @@
 package com.carlos.grabredenvelope.services
 
 import android.graphics.Path
+import android.graphics.PixelFormat
+import android.os.Build
+import android.util.Log
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import com.carlos.cutils.extend.*
 import com.carlos.cutils.util.AppUtils
 import com.carlos.cutils.util.LogUtils
+import com.carlos.grabredenvelope.MyApplication
+import com.carlos.grabredenvelope.R
 import com.carlos.grabredenvelope.data.RedEnvelopePreferences
 import com.carlos.grabredenvelope.db.WechatRedEnvelope
 import com.carlos.grabredenvelope.db.WechatRedEnvelopeDb
+import com.carlos.grabredenvelope.util.DisplayUtil
 import com.carlos.grabredenvelope.util.WechatConstants
 import com.carlos.grabredenvelope.util.WechatConstants.RED_ENVELOPE_BEEN_GRAB_ID
 import com.carlos.grabredenvelope.util.WechatConstants.RED_ENVELOPE_CLOSE_ID
@@ -71,6 +80,36 @@ class WechatService : BaseAccessibilityService() {
         WechatConstants.setVersion(AppUtils.getVersionName(WECHAT_PACKAGE))
     }
 
+    override fun onServiceConnected() {
+//        serviceInfo.packageNames = arrayOf(Config.WechatPackageName)
+        initView()
+    }
+
+    private fun initView() {
+        try {
+            val wm = getSystemService(WINDOW_SERVICE) as? WindowManager
+            val lp = WindowManager.LayoutParams().apply {
+                type = WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    layoutInDisplayCutoutMode =
+                        WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+                }
+                format = PixelFormat.TRANSLUCENT
+                flags = flags or
+                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
+                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
+                        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+                width = DisplayUtil.dpToPx(MyApplication.instance, 30f)
+                height = DisplayUtil.dpToPx(MyApplication.instance, 30f)
+                gravity = Gravity.END or Gravity.CENTER_VERTICAL
+            }
+            val view = LayoutInflater.from(this).inflate(R.layout.red_float, null)
+            wm?.addView(view, lp)
+        } catch (e: Exception) {
+            LogUtils.e(e.toString())
+        }
+    }
     /**
      * 部分手机特殊场景下偶现出现红包框但是不走TYPE_WINDOW_STATE_CHANGED的情况，导致不会点击开，手动在点击后调一次避免此问题
      */
