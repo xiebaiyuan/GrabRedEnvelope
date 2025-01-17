@@ -60,7 +60,7 @@ class RecordFragment : BaseFragment(R.layout.fragment_record) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init(view)
-        initData()
+//        initData()
     }
 
     private fun init(view: View) {

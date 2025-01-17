@@ -53,9 +53,9 @@ open class MainActivity : BaseActivity() {
 
     private val WECHAT_SERVICE_NAME = "com.carlos.grabredenvelope/.services.WechatService"
 
-    var fragments = mutableListOf<Fragment>(ControlFragment(), GuideFragment(), RecordFragment(), EmojiFragment()
+    var fragments = mutableListOf<Fragment>(ControlFragment(), GuideFragment()/*, RecordFragment()*/, EmojiFragment()
     )
-    var titles = mutableListOf("控制", "教程", "微信", "表情")
+    var titles = mutableListOf("控制", "教程"/*, "微信"*/, "表情")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
