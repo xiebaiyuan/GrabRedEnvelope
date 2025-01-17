@@ -122,6 +122,10 @@ class ControlFragment : BaseFragment(R.layout.fragment_control), SeekBar.OnSeekB
         et_text_filters.addTextChangedListener {
             RedEnvelopePreferences.grabFilter = et_text_filters.text.toString()
         }
+        btn_start_linsen_service.setOnClickListener(View.OnClickListener {
+            val intent = Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)
+            startActivity(intent)
+        })
     }
 
 

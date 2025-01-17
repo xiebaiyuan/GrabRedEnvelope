@@ -82,7 +82,7 @@ abstract class BaseAccessibilityService : CBaseAccessibilityService2() {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        var flags = flags
+/*        var flags = flags
         LogUtils.d("service onstartcommand.")
         val builder = Notification.Builder(MyApplication.instance.applicationContext)
         val notificationIntent = Intent(this, MainActivity::class.java)
@@ -103,7 +103,7 @@ abstract class BaseAccessibilityService : CBaseAccessibilityService2() {
         notification.defaults = Notification.DEFAULT_SOUND// set default sound.
 
         startForeground(110, notification)
-        flags = Service.START_FLAG_REDELIVERY
+        flags = Service.START_FLAG_REDELIVERY*/
         return super.onStartCommand(intent, flags, startId)
     }
 

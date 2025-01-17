@@ -55,7 +55,15 @@
         </service>
 
         <activity android:name="com.carlos.grabredenvelope.receiver.MessageActivity" />
-
+        <service
+            android:name=".services.WechatNotificationListenerService"
+            android:exported="true"
+            android:label="微信通知监听服务"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
         <!--        <service android:name=".services.JpushService"-->
         <!--                 android:enabled="true"-->
         <!--                 android:exported="false"-->

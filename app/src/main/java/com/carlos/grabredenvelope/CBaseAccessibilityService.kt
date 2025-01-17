@@ -32,11 +32,11 @@ abstract class CBaseAccessibilityService2 : AccessibilityService() {
 
     private fun monitorAccessibilityEvent(event: AccessibilityEvent) {
         when (event.eventType) {
-            AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED -> {
-                if (isMonitorNotification) {
-                    monitorNotificationChanged(event)
-                }
-            }
+//            AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED -> {
+//                if (isMonitorNotification) {
+//                    monitorNotificationChanged(event)
+//                }
+//            }
             AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
                 if (isMonitorWindow) {
                     monitorWindowChanged(event)

@@ -110,7 +110,7 @@ class WechatService : BaseAccessibilityService() {
         if(WechatFilter.isRemarkFilter(rootInActiveWindow)) return
 
         GlobalScope.launch {
-            delay(300L)
+            delay(100L)
             grabRedEnvelope()
         }
         monitorChat()
