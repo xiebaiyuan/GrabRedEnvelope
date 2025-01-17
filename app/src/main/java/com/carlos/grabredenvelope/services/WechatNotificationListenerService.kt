@@ -43,9 +43,9 @@ class WechatNotificationListenerService : NotificationListenerService() {
         }
         try {
             pendingIntent?.send()
-            Log.d(tag, "成功：打开红包")
+            Log.d(tag, "成功：打开红包通知")
         } catch (e: PendingIntent.CanceledException) {
-            Log.d(tag, "失败：打开失败")
+            Log.d(tag, "失败：打开通知失败")
             e.printStackTrace()
         }
     }
