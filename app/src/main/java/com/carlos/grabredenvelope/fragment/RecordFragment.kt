@@ -82,16 +82,16 @@ class RecordFragment : BaseFragment(R.layout.fragment_record) {
 
     private suspend fun getData(): ArrayList<String> {
         return withContext(Dispatchers.IO) {
-            var list = ArrayList<String>()
-            total = 0.0
-            val wechatRedEnvelopes = WechatRedEnvelopeDb.allData
-            for (wechatRedEnvelope in wechatRedEnvelopes.asReversed()) {
-                total = total.doubleCount(wechatRedEnvelope.count.split("元")[0].toDouble())
-                list.add("${getYearToMinute(wechatRedEnvelope.time)} 助你抢到了 ${wechatRedEnvelope.count}")
-            }
-            if (wechatRedEnvelopes.isNotEmpty()) {
-                startTime = getYearToMinute(wechatRedEnvelopes[0].time)
-            }
+//            var list = ArrayList<String>()
+//            total = 0.0
+//            val wechatRedEnvelopes = WechatRedEnvelopeDb.allData
+//            for (wechatRedEnvelope in wechatRedEnvelopes.asReversed()) {
+//                total = total.doubleCount(wechatRedEnvelope.count.split("元")[0].toDouble())
+//                list.add("${getYearToMinute(wechatRedEnvelope.time)} 助你抢到了 ${wechatRedEnvelope.count}")
+//            }
+//            if (wechatRedEnvelopes.isNotEmpty()) {
+//                startTime = getYearToMinute(wechatRedEnvelopes[0].time)
+//            }
             return@withContext list
         }
     }
