@@ -3,9 +3,9 @@
     <string name="app_name_dev">抢红包DEV</string>
     <string name="app_content">小不点</string>
 
-    <string name="grab_wechat_envelope">抢微信红包</string>
+    <string name="grab_wechat_envelope">努力挣钱</string>
     <string name="grab_dingding_envelope">抢钉钉红包</string>
-    <string name="auto_send_emoji">自动发送表情</string>
+    <string name="auto_send_emoji">自动感谢</string>
 
     <string name="how_to_use">
         该版本适配微信7.0.3,7.0.4,7.0.5,7.0.8,7.0.9,7.0.10,7.0.11,7.0.12,7.0.16,8.0.0,8.0.1,8.0.18,8.0.19,8.0.31,8.0.32，其他版本未适配可能无效。长时间服务后台可能被杀，如果服务被杀需要关闭重新开启无障碍服务。
